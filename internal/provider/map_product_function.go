@@ -27,22 +27,25 @@ func (f *MapProductFunction) Metadata(ctx context.Context, req function.Metadata
 
 func (f *MapProductFunction) Definition(ctx context.Context, req function.DefinitionRequest, resp *function.DefinitionResponse) {
 	resp.Definition = function.Definition{
-		Summary:     "Create a product of two maps",
-		Description: "Given two map(string) arguments, return a map with keys that are a product of input keys joined by `separator`, and value is a two-element list containing original values",
+		Summary: "Compute the Cartesian product of two string maps.",
+		Description: "Accepts two `map(string)` arguments and a separator string. " +
+			"Returns a `map(list(string))` whose keys are every combination of input keys joined by the separator, " +
+			"and whose values are two-element lists containing the corresponding values from each input map. " +
+			"For example, `map_product({a=\"v1\"}, {b=\"v2\"}, \"|\")` returns `{\"a|b\": [\"v1\", \"v2\"]}`.",
 		Parameters: []function.Parameter{
 			function.MapParameter{
 				Name:        "first",
-				Description: "First map",
+				Description: "The first map(string). Its keys form the left-hand side of each product key.",
 				ElementType: types.StringType,
 			},
 			function.MapParameter{
 				Name:        "second",
-				Description: "Second map",
+				Description: "The second map(string). Its keys form the right-hand side of each product key.",
 				ElementType: types.StringType,
 			},
 			function.StringParameter{
 				Name:        "separator",
-				Description: "separator to join keys on",
+				Description: "The string used to join a key from `first` and a key from `second`, e.g. `\"|\"` produces `\"a|b\"`.",
 			},
 		},
 		Return: function.MapReturn{
