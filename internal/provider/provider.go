@@ -60,6 +60,9 @@ func (p *AndrzejTestProvider) DataSources(ctx context.Context) []func() datasour
 func (p *AndrzejTestProvider) Functions(ctx context.Context) []func() function.Function {
 	return []func() function.Function{
 		NewMapProductFunction,
+		NewValidateCidrFunction,
+		NewValidateNetCidrFunction,
+		NewValidateHostCidrFunction,
 	}
 }
 
