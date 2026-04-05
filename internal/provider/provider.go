@@ -39,7 +39,7 @@ func (p *AndrzejTestProvider) Schema(ctx context.Context, req provider.SchemaReq
 	resp.Schema = schema.Schema{}
 }
 
-// Not needed for functions-only provider
+// Not needed for functions-only provider.
 func (p *AndrzejTestProvider) Configure(ctx context.Context, req provider.ConfigureRequest, resp *provider.ConfigureResponse) {
 }
 
