@@ -1,1 +1,1 @@
-provider "andrzejtest" {}
+provider "functions" {}

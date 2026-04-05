@@ -44,15 +44,17 @@ func (p *AndrzejTestProvider) Configure(ctx context.Context, req provider.Config
 }
 
 func (p *AndrzejTestProvider) Resources(ctx context.Context) []func() resource.Resource {
-	return []func() resource.Resource{
-		// NewExampleResource,
-	}
+	// return []func() resource.Resource{
+	// 	NewExampleResource,
+	// }
+	return nil
 }
 
 func (p *AndrzejTestProvider) DataSources(ctx context.Context) []func() datasource.DataSource {
-	return []func() datasource.DataSource{
-		// NewExampleDataSource,
-	}
+	// return []func() datasource.DataSource{
+	// 	NewExampleDataSource,
+	// }
+	return nil
 }
 
 func (p *AndrzejTestProvider) Functions(ctx context.Context) []func() function.Function {

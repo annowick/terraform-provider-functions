@@ -1,5 +1,5 @@
 output "map_product" {
-  value = provider::andrzejtest::map_product(
+  value = provider::functions::map_product(
     {
       privateDns1 = "storage"
       privateDns2 = "webapps"
@@ -8,6 +8,6 @@ output "map_product" {
       vNet1 = "office"
       vNet2 = "field"
     },
-    "|"
+    ":"
   )
 }

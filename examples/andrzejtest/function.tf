@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    andrzejtest = {
+    functions = {
       source = "andrzej/test/andrzejtest"
     }
   }
