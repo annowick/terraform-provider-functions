@@ -46,11 +46,15 @@ jobs:
       - uses: hashicorp/setup-terraform@5e8dbf3c6d9deaf4193ca7a8fb23f2ac83bb6c85 # v4.0.0
         with:
           terraform_wrapper: false
-      - run: make generate
+      - uses: arduino/setup-task@v2
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: task generate
       - name: git diff
         run: |
           git diff --compact-summary --exit-code || \
-            (echo; echo "Unexpected difference in directories after code generation. Run 'make generate' command and commit."; exit 1)
+            (echo; echo "Unexpected difference in directories after code generation. Run 'task generate' command and commit."; exit 1)
 
   # Run acceptance tests in a matrix with Terraform CLI versions
   test:

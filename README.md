@@ -6,6 +6,7 @@ _This template repository is built on the [Terraform Plugin Framework](https://g
 
 - [Terraform](https://developer.hashicorp.com/terraform/downloads) >= 1.0
 - [Go](https://golang.org/doc/install) >= 1.24
+- [Task](https://taskfile.dev) >= 3.x
 
 ## Building the Provider
 
@@ -41,12 +42,12 @@ If you wish to work on the provider, you'll first need [Go](http://www.golang.or
 
 To compile the provider, run `go install`. This will build the provider and put the provider binary in the `$GOPATH/bin` directory.
 
-To generate or update documentation, run `make generate`.
+To generate or update documentation, run `task generate`.
 
-In order to run the full suite of Acceptance tests, run `make testacc`.
+In order to run the full suite of Acceptance tests, run `task testacc`.
 
 *Note:* Acceptance tests create real resources, and often cost money to run.
 
 ```shell
-make testacc
+task testacc
 ```
