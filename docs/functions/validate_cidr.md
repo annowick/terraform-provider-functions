@@ -14,17 +14,7 @@ Accepts a string and returns `true` if it is a valid IPv4 CIDR notation (e.g. `"
 
 ```terraform
 output "map_product" {
-  value = provider::functions::map_product(
-    {
-      privateDns1 = "storage"
-      privateDns2 = "webapps"
-    },
-    {
-      vNet1 = "office"
-      vNet2 = "field"
-    },
-    ":"
-  )
+  value = provider::functions::validate_cidr("10.1.1.1/24")
 }
 ```
 

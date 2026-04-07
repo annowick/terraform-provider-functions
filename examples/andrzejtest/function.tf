@@ -1,8 +1,9 @@
 terraform {
   required_providers {
     functions = {
-      source  = "andrzej/test/andrzejtest"
-      version = "~> 0.0.3"
+      source = "andrzej/test/andrzejtest"
+      # source  = "annowick/functions"
+      # version = "~> 0.0.1"
     }
   }
   required_version = "~> 1.8"
