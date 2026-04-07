@@ -1,3 +1,8 @@
+## Andrzej
+examples/local_test/
+!examples/local_test.*tf
+##
+
 *.dll
 *.exe
 .DS_Store
