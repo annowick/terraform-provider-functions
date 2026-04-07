@@ -14,11 +14,11 @@ Accepts a string and returns `true` if it is a valid IPv4 CIDR notation AND the 
 
 ```terraform
 output "valid_netcidr" {
-  value = provider::functions::validate_netcidr("10.1.1.0/24") // true
+  value = provider::functions::validate_netcidr("10.1.1.0/24") # true
 }
 
 output "invalid_netcidr" {
-  value = provider::functions::validate_netcidr("10.1.1.0/16") // false
+  value = provider::functions::validate_netcidr("10.1.1.0/16") # false
 }
 ```
 
