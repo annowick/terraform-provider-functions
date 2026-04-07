@@ -1,0 +1,37 @@
+version: '3'
+
+tasks:
+  default:
+    deps: [fmt, lint, install, generate]
+
+  build:
+    cmds:
+      - go build -v ./...
+
+  install:
+    deps: [build]
+    cmds:
+      - go install -v ./...
+
+  lint:
+    cmds:
+      - golangci-lint run
+
+  generate:
+    dir: tools
+    cmds:
+      - go generate ./...
+
+  fmt:
+    cmds:
+      - gofmt -s -w -e .
+
+  test:
+    cmds:
+      - go test -v -cover -timeout=120s -parallel=10 ./...
+
+  testacc:
+    env:
+      TF_ACC: "1"
+    cmds:
+      - go test -v -cover -timeout 120m ./...

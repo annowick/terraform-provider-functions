@@ -15,9 +15,9 @@ repos:
         pass_filenames: false
         types: [go]
 
-      - id: make-generate
-        name: make generate
+      - id: task-generate
+        name: task generate
         language: system
-        entry: bash -c 'make generate && git diff --compact-summary --exit-code || (echo; echo "Unexpected difference after make generate. Commit the generated files."; exit 1)'
+        entry: bash -c 'task generate && git diff --compact-summary --exit-code || (echo; echo "Unexpected difference after task generate. Commit the generated files."; exit 1)'
         pass_filenames: false
         stages: [pre-commit]
